@@ -37,7 +37,7 @@
             <img class="img" src="/assets/404cookie.jpg" alt="A free cookie!">
             <div class="bodytext">
                 <p>You managed to reach a place with nothing!</p>
-                <p>So heres a cookie and a <a href="/">redirect</a>.</p>
+                <p>So heres a cookie and a <a href="/">redirect.</a>.</p>
             </div>
         </div>
     </body>
