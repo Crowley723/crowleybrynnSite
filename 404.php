@@ -34,7 +34,7 @@
     <body>
         <div class="container">
             <h1 class="header">Page Not Found!</h1>
-            <img class="img" src="/assets/404cookie.jpg" alt="A free cookie!">
+            <img class="img" src="/assets/cookie.jpg" alt="A free cookie!">
             <div class="bodytext">
                 <p>You managed to reach a place with nothing!</p>
                 <p>So heres a cookie and a <a href="/">redirect.</a>.</p>
