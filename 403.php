@@ -33,7 +33,8 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="header">Access Forbidden</h1>
+            <h1 class="header">Access Forbidden
+            </h1>a
             <img class="img" src="/assets/vault.png" alt="Bank vault door">
             <div class="bodytext">
                 <p>You lack the necessary clearance to access this page!</p>
