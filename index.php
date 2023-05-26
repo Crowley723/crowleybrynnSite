@@ -23,7 +23,7 @@
        Eventually the goal is to have pretty looking graphics along with the ability to look at raw data vs the AQ Index. Also being able to choose between PM2.5, PM10, and Ozone.<br>
     </p>
     <p>
-      This is staging.
+      This is staging..
     </p>
 
 
