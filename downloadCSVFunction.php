@@ -40,11 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $filename = 'exteriorData_' . date('m-d-Y') . '.csv';
     header('Content-Disposition: attachment; filename=' . $filename);
     header('Pragma: no-cache');
-  } elseif($selection == 'InteriorData'){
-    header('Content-Type: text/csv; charset=utf-8');
-    $filename = 'interiorData_' . date('m-d-Y') . '.csv';
-    header('Content-Disposition: attachment; filename=' . $filename);
-    header('Pragma: no-cache');
   }
   
 
@@ -65,13 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while($row = mysqli_fetch_assoc($result)) {
       fputcsv($output, $row);
     }
-  } elseif($selection == 'InteriorData'){
-    fputcsv($output, array('ID', 'Sensor', 'Location', 'Temperature(C)', 'Humidity(%)', 'Pressure(bar)', 'Timestamp'));
-    $query = "SELECT * FROM `Interior` ORDER BY id DESC";
-    $result = mysqli_query($conn, $query);
-    while($row = mysqli_fetch_assoc($result)) {
-      fputcsv($output, $row);
-    }
+  }
   }
   fclose($output);
   $conn->close();
