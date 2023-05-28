@@ -122,13 +122,12 @@
 <div class="topnav" id="myTopnav">
   <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/index.php" or $_SERVER['REQUEST_URI'] == "/"){echo " class=\"active\"";} ?>>Dashboard</a>
   <div class="dropdown">
-    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/exteriorData.php") !== false || strpos($_SERVER['REQUEST_URI'], "/flower-data.php") !== false || strpos($_SERVER['REQUEST_URI'], "/interior-data.php") !== false){echo " class=\"active\"";} ?>>View Table
+    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/exteriorData.php") !== false || strpos($_SERVER['REQUEST_URI'], "/flowerData.php") !== false){echo " class=\"active\"";} ?>>View Table
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="/exteriorData.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/exteriorData.php") !== false){echo " class=\"active\"";} ?>>ExteriorData</a>
-      <a href="/flower-data.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/flower-data.php") !== false){echo " class=\"active\"";} ?>>FlowerData</a>
-      <!--a href="/interior-data.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/interior-data.php") !== false){echo " class=\"active\"";} ?>>InteriorData</a//-->
+      <a href="/flowerData.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/flowerData.php") !== false){echo " class=\"active\"";} ?>>FlowerData</a>
     </div>
   </div>
   <a href="/downloadCSV.php"<?php if($_SERVER['REQUEST_URI'] == "/downloadCSV.php"){echo " class=\"active\"";} ?>>Download CSV</a>

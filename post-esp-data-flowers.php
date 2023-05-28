@@ -1,12 +1,7 @@
 <?php
-
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
-
-
-
-
 
 $servername = "localhost";
 // REPLACE with your Database name
@@ -16,25 +11,16 @@ $username = getenv('SQLUSER');
 // REPLACE with Database user password
 $password = getenv('SQLPASS');
 
-
-
-// Keep this API Key value to be compatible with the ESP32 code provided in the project page. 
-// If you change this value, the ESP32 sketch needs to match
-$api_key_value = "3f6951d3-d732-43ab-af97-edb73765071c";
+//api_key_value must match apikey loaded on esp8266 device in order for post requests to work.
+$api_key_value = getenv("FLOWERSSENSORKEY");
 $api_key = $sensor = $location = $Temperature = $Humidity = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["api_key"])){
         $api_key = test_input($_POST["api_key"]);
     } else{
-        echo "api_key is empty";
+        echo "No API Key provided.";
         exit(-1);
     }
-
-    
-    //echo "\nAPI_Key:";
-    //echo $api_key;
-    //echo "\nAPI_Key_Value:";
-    //echo $api_key_value;
     echo "\n";
     if($api_key == $api_key_value) {
         //echo "API Key Accepted";
@@ -51,9 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         
         $sql = "INSERT INTO Flowers (`Sensor`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`) VALUES ('" . $sensor . "', '" . $Temperature . "','" . $Pressure . "', '" . $Humidity . "')";
-
-        // $sql = "INSERT INTO Flowers (`Sensor`, `Location`, `Temperature(C)`, `Pressure(bar)` `Humidity(%)`) VALUES ('" . $sensor . "', '" . $location . "', '" . $Temperature . "', '" . $Humidity . "')";
-
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } 
