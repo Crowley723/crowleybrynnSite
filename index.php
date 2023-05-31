@@ -18,10 +18,8 @@
   <div style="padding-left:16px">
     <h2>Nothing Yet!</h2>
     <p></p>
-    <p>I have however, FINALLY setup an SSL certificate. Only took me 4 hours.<br><br>
-       I am in the process of adding real time AQI data to this page.
+    <p>*I am in the process of adding real time AQI data to this page.
        Eventually the goal is to have pretty looking graphics along with the ability to look at raw data vs the AQ Index. Also being able to choose between PM2.5, PM10, and Ozone.<br>
-       Staging
         </p>
 
   </div>
