@@ -11,8 +11,7 @@
         die("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
     }
     $lastLoadedRow = $_SERVER['Last-Loaded-Row'];
-    
-    $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
+    $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
     $result = $conn->query($query);
 
     $data = array();

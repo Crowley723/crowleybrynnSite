@@ -18,30 +18,7 @@ $(document).ready(function() {
                 lastLoadedRow = updatePage(data);
             },
             
-            // data: { last_id: last_id },
-            // success: function(response) {
-            //     // loop through the new data and append it to the top of the table
-            //     $.each(response, function(key, value) {
-            //         var row_id = value.id;
-            //         var row_location = value.Location;
-            //         var row_Temperature = value['Temperature(C)'];
-            //         var row_Pressure = value['Pressure(bar)'];
-            //         var row_Humidity = value['Humidity(%)'];
-            //         var row_timestamp = value['Timestamp'];
-                    
-            //         var row = '<tr>\
-            //                       <td>' + row_id + '</td>\
-            //                       <td>' + row_location + '</td>\
-            //                       <td>' + row_Temperature + '</td>\
-            //                       <td>' + row_Humidity + '</td>\
-            //                       <td>' + row_Pressure + '</td>\
-            //                       <td>' + row_timestamp + '</td>\
-            //                   </tr>';
-                              
-            //         $('#flowerData').html(row); // add the new row to the top of the table
-                    
-            //     });
-            // },
+
             error: function(xhr, status, error) {
                 console.log(status + ': ' + error);
             }
@@ -57,6 +34,13 @@ $(document).ready(function() {
             if(point.id > highestId){
                 highestId = point.id;
             }
-        }
+            var existingPoint = existingDataPoints.filter(function() {
+                return $(this).text() === point.id + '|' + point.temperature + ' | ' + point.humidity + ' | ' + point.timestamp;
+              });
+            if (existingPoint.length === 0) {
+            var html = '<div>'+ point.id + '|' + point.temperature + ' | ' + point.humidity + ' | ' + point.timestamp + '</div>';
+            container.prepend(html);
+            }
         return highestId;
+        }
     }
