@@ -29,18 +29,16 @@ jQuery(document).ready(function() {
         var existingDataPoints = container.children();
         var highestId = 0;
 
-        for(var i = data.length -1; i>=0; i--){
+        for(var i = data.length - 1; i >= 0; i--){
             var point = data[i];
             if(point.id > highestId){
                 highestId = point.id;
             }
-            var existingPoint = existingDataPoints.filter(function() {
-                return $(this).text() === point.id + '|' + point.temperature + ' | ' + point.humidity + ' | ' + point.timestamp;
-              });
-            if (existingPoint.length === 0) {
-            var html = '<div>'+ point.id + '|' + point.temperature + ' | ' + point.humidity + ' | ' + point.timestamp + '</div>';
-            container.prepend(html);
-            }
+            var dataPoint = $('<div>').addClass('dataPoint');
+            var html = point.temperature + ' | ' + point.pressure + ' | ' + point.humidity;
+            dataPoint.text(html);
+            container.prepend(dataPoint);
+
         return highestId;
         }
     }
