@@ -131,6 +131,7 @@
     </div>
   </div>
   <a href="/downloadCSV.php"<?php if($_SERVER['REQUEST_URI'] == "/downloadCSV.php"){echo " class=\"active\"";} ?>>Download CSV</a>
+  <a href="/testingAjax.php"<?php if($_SERVER['REQUEST_URI'] == "/testingAjax.php"){echo " class=\"active\"";} ?>>Testing AJAX</a>
   
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
   <script>
