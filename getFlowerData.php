@@ -10,5 +10,19 @@
     if($conn -> connect_error){
         die("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
     }
-    $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `Timestamp` FROM Flowers ORDER BY id DESC";
-    $connQuery = $conn->query($query);
+    $lastLoadedRow = $_SERVER['Last-Loaded-Row'];
+    
+    $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
+    $result = $conn->query($query);
+
+    $data = array();
+    if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+            $data[] = $row;
+        }
+    }
+    header('Content-Type: application/json');
+    echo json_encode($data);
+
+    $conn->close();
+?>
