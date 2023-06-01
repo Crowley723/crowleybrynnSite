@@ -3,12 +3,13 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
     $hostname = "localhost";
     $database = "sensorData";
     $username = getenv('SQLUSER');
     $password = getenv('SQLPASS');
 
-    $conn = new new mysqli($hostname, $username, $password, $database);
+    $conn = new mysqli($hostname, $username, $password, $database);
 
     if($conn -> connect_error){
         echo "Connect Error";
