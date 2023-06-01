@@ -20,7 +20,7 @@
     if(is_null($lastLoadedRow)){
         $lastLoadedRow = 0;
     }
-    $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
+    $query = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
     $result = $conn->query($query);
 
     $data = array();
