@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
     var lastLoadedRow = 0;
     lastLoadedRow = fetchData(lastLoadedRow);
     setInterval(fetchData(lastLoadedRow), 30000);
