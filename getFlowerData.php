@@ -12,7 +12,6 @@
     $conn = new mysqli($hostname, $username, $password, $database);
 
     if($conn -> connect_error){
-        echo "Connect Error";
         die("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
         
     }
@@ -25,16 +24,11 @@
     $result = $conn->query($query);
 
     $data = array();
-    #echo $result;
     if($result->num_rows > 0){
-        while($row = $result->fetch_assoc()){
-            $data[] = $row;
-        }
-        
+        $data = $result->fetch_all(MYSQLI_ASSOC);
     }
     header('Content-Type: application/json');
-    #echo var_dump($data);
-    echo json_encode($data);
+    echo json_encode($data, JSON_THROW_ON_ERROR);
 
     $conn->close();
 ?>

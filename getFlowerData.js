@@ -23,6 +23,7 @@ jQuery(document).ready(function() {
                 console.log(status + ': ' + error);
             }
         });
+        return lastLoadedRow;
     }
     function updatePage(data){
         var table = $('#dataTable');
