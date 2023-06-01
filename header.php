@@ -16,7 +16,7 @@
 }
 
 .active {
-  background-color: #4367e9;
+  background-color: #e83131;
   color: white;
 }
 
