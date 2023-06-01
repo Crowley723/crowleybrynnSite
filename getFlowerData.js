@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
                 
                 
                 // Append the new data point to the container
-                table.prepend(newRow);
+                table.find('tr.first').after(newRow);
             }
         
         }
