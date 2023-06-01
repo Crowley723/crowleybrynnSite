@@ -24,7 +24,7 @@
         }
     }
     header('Content-Type: application/json');
-    var_dump($data);
+    echo var_dump($data);
     echo json_encode($data);
 
     $conn->close();
