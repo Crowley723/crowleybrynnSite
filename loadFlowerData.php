@@ -21,5 +21,6 @@ error_reporting(E_ALL);
         </tr>
         <script src="./getFlowerData.js"></script>
     
+        </table>
     </body>
 </html>
