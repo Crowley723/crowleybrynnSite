@@ -18,6 +18,7 @@ jQuery(document).ready(function() {
             dataType: 'json',
             success: function(data){
                 lastLoadedRow = updatePage(data);
+                console.log(data);
             },
             error: function(xhr, status, error) {
                 console.log(status + ': ' + error);
