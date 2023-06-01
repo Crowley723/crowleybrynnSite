@@ -22,8 +22,7 @@
     $servername = "localhost";
     $dbname = "sensorData";
     $username = getenv('SQLUSER');
-// REPLACE with Database user password
-$password = getenv('SQLPASS');
+    $password = getenv('SQLPASS');
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
