@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
         return lastLoadedRow;
     }
     function updatePage(data){
-        var table = $('table');
+        var table = $('#dataTable');
         var existingDataPoints = table.children();
         var highestId = 0;
 
@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
                 
                 
                 // Append the new data point to the container
-                table.find('tr.first').after(newRow);
+                table.prepend(newRow);
             }
         
         }

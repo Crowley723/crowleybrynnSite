@@ -14,10 +14,10 @@ error_reporting(E_ALL);
         <h1 style="padding-left:16px">Flower Data</h1>
         <table id="dataTable" cellspacing="5" cellpadding="5" style="padding-left:7px">
         <tr>
-          <td><b>ID</b></td>
-          <td><b>Temperature(C)</b></td>
-          <td><b>Humidity(%)</b></td>
-          <td><b>Timestamp</b></td>
+          <th><b>ID</b></th>
+          <th><b>Temperature(C)</b></th>
+          <th><b>Humidity(%)</b></th>
+          <th><b>Timestamp</b></th>
         </tr>
         <script src="./getFlowerData.js"></script>
     
