@@ -30,6 +30,11 @@ jQuery(document).ready(function() {
         var table = $('#dataTable');
         var existingDataPoints = table.children();
         var highestId = 0;
+        var tableBody = table.find('tbody');
+        if (tableBody.length === 0) {
+            tableBody = $('<tbody>');
+            table.append(tableBody);
+          }
 
         for(var i = data.length - 1; i >= 0; i--){
             var point = data[i];
@@ -51,7 +56,7 @@ jQuery(document).ready(function() {
                 
                 
                 // Append the new data point to the container
-                table.prepend(newRow);
+                tableBody.prepend(newRow);
             }
         
         }
