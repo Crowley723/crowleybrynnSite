@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
         });
     }
     function updatePage(data){
-        var container = $('#dataTable');
+        var table = $('#dataTable');
         var existingDataPoints = container.children();
         var highestId = 0;
 
@@ -35,6 +35,7 @@ jQuery(document).ready(function() {
                 highestId = point.id;
             }
             if (
+                point.hasOwnProperty('ID') &&
                 point.hasOwnProperty('Temperature(C)') &&
                 point.hasOwnProperty('Humidity(%)') &&
                 point.hasOwnProperty('Timestamp')
@@ -43,15 +44,15 @@ jQuery(document).ready(function() {
                 var dataPoint = $('<div>').addClass('dataPoint');
                 
                 // Create and append the HTML for the data point
-                var html =
-                  'Temperature: ' + point['Temperature(C)'] + '°C | ' +
-                  'Humidity: ' + point['Humidity(%)'] + '% | ' +
-                  'Timestamp: ' + point['Timestamp'];
+                var newRow = $('<tr>');
+                newRow.append('<td>' + point['ID'] + '</td>');
+                newRow.append('<td>' + point['Temperature(C)'] + '</td>');
+                newRow.append('<td>' + point['Humidity(%)'] + '</td>');
+                newRow.append('<td>' + point['Timestamp'] + '</td>');
                 
-                dataPoint.text(html);
                 
                 // Append the new data point to the container
-                container.prepend(dataPoint);
+                table.prepend(newRow);
             }
         
         }
