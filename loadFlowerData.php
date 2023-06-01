@@ -12,11 +12,10 @@ error_reporting(E_ALL);
         <table cellspacing="5" cellpadding="5" style="padding-left:7px">
         <tr>
           <td><b>ID</b></td>
-          <td><b>Sensor</b></td>
           <td><b>Temperature(C)</b></td>
           <td><b>Humidity(%)</b></td>
           <td><b>Timestamp</b></td>
-        </tr>';
+        </tr>
     </head>
     <body>
         <h1 style="padding-left:16px">Flower Data</h1>
