@@ -39,6 +39,7 @@ jQuery(document).ready(function() {
             dataPoint.text(html);
             container.prepend(dataPoint);
 
-        return highestId;
+        
         }
+        return highestId;
     }
