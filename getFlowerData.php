@@ -16,12 +16,16 @@
         die("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
         
     }
-    $lastLoadedRow = $_SERVER['Last-Loaded-Row'];
+    $headers = getallheaders();
+    $lastLoadedRow = isset($headers['Last-Loaded-Row']) ? $headers['Last-Loaded-Row'] : null;
+    if(is_null($lastLoadedRow)){
+        $lastLoadedRow = 0;
+    }
     $query = "SELECT `ID`, `Sensor`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > $lastLoadedRow ORDER BY id DESC";
     $result = $conn->query($query);
 
     $data = array();
-    echo $result;
+    #echo $result;
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $data[] = $row;
@@ -29,7 +33,7 @@
         
     }
     header('Content-Type: application/json');
-    echo var_dump($data);
+    #echo var_dump($data);
     echo json_encode($data);
 
     $conn->close();
