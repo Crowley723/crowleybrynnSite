@@ -34,11 +34,25 @@ jQuery(document).ready(function() {
             if(point.id > highestId){
                 highestId = point.id;
             }
-            var dataPoint = $('<div>').addClass('dataPoint');
-            var html = point.temperature + ' | ' + point.pressure + ' | ' + point.humidity;
-            dataPoint.text(html);
-            container.prepend(dataPoint);
-
+            if (
+                point.hasOwnProperty('Temperature(C)') &&
+                point.hasOwnProperty('Humidity(%)') &&
+                point.hasOwnProperty('Timestamp')
+              ) {
+                // Create a new data point element
+                var dataPoint = $('<div>').addClass('dataPoint');
+                
+                // Create and append the HTML for the data point
+                var html =
+                  'Temperature: ' + point['Temperature(C)'] + '°C | ' +
+                  'Humidity: ' + point['Humidity(%)'] + '% | ' +
+                  'Timestamp: ' + point['Timestamp'];
+                
+                dataPoint.text(html);
+                
+                // Append the new data point to the container
+                container.prepend(dataPoint);
+            }
         
         }
         return highestId;
