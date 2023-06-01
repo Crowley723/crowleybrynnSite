@@ -9,20 +9,16 @@ error_reporting(E_ALL);
         <title>Dyn. Load Flower Data</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <?php include "./header.php" ?>
-        <table cellspacing="5" cellpadding="5" style="padding-left:7px">
+    </head>
+    <body>
+        <h1 style="padding-left:16px">Flower Data</h1>
+        <table id="dataTable" cellspacing="5" cellpadding="5" style="padding-left:7px">
         <tr>
           <td><b>ID</b></td>
           <td><b>Temperature(C)</b></td>
           <td><b>Humidity(%)</b></td>
           <td><b>Timestamp</b></td>
         </tr>
-    </head>
-    <body>
-        <h1 style="padding-left:16px">Flower Data</h1>
-        <div style="padding-left:16px" id="dataTable">
-        
-        </div>
-
         <script src="./getFlowerData.js"></script>
     
     </body>

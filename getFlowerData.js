@@ -1,7 +1,9 @@
 jQuery(document).ready(function() {
     var lastLoadedRow = 0;
     lastLoadedRow = fetchData(lastLoadedRow);
-    setInterval(fetchData(lastLoadedRow), 30000);
+    setInterval(function(){
+        fetchData(lastLoadedRow)
+    }, 30000);
 });
 
     
@@ -17,8 +19,6 @@ jQuery(document).ready(function() {
             success: function(data){
                 lastLoadedRow = updatePage(data);
             },
-            
-
             error: function(xhr, status, error) {
                 console.log(status + ': ' + error);
             }
