@@ -39,10 +39,7 @@ jQuery(document).ready(function() {
                 point.hasOwnProperty('Temperature(C)') &&
                 point.hasOwnProperty('Humidity(%)') &&
                 point.hasOwnProperty('Timestamp')
-              ) {
-                // Create a new data point element
-                var dataPoint = $('<div>').addClass('dataPoint');
-                
+              ) {                
                 // Create and append the HTML for the data point
                 var newRow = $('<tr>');
                 newRow.append('<td>' + point['ID'] + '</td>');
