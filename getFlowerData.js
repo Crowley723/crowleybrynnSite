@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
     }
     function updatePage(data){
         var table = $('#dataTable');
-        var existingDataPoints = container.children();
+        var existingDataPoints = table.children();
         var highestId = 0;
 
         for(var i = data.length - 1; i >= 0; i--){
