@@ -17,7 +17,7 @@ jQuery(document).ready(function() {
             },
             dataType: 'json',
             success: function(data){
-                lastLoadedRow = updatePage(data);
+                updatePage(data, lastLoadedRow);
                 console.log(`Last-Loaded-Row: ${lastLoadedRow}`);
             },
             error: function(xhr, status, error) {
@@ -26,9 +26,8 @@ jQuery(document).ready(function() {
         });
         return lastLoadedRow;
     }
-    function updatePage(data){
+    function updatePage(data, lastLoadedRow){
         var table = $('#dataTable');
-        var existingDataPoints = table.children();
         var highestId = 0;
         var tableBody = table.find('tbody');
         if (tableBody.length === 0) {
@@ -37,7 +36,9 @@ jQuery(document).ready(function() {
           }
 
         for(var i = data.length - 1; i >= 0; i--){
+            
             var point = data[i];
+
             if(point.id > highestId){
                 highestId = point.id;
             }
@@ -60,5 +61,10 @@ jQuery(document).ready(function() {
             }
         
         }
-        return highestId;
+        if (highestId > lastLoadedRow){
+            return highestId;
+        } else{
+            return lastLoadedRow;
+        }
+        
     }
