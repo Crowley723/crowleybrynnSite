@@ -1,5 +1,6 @@
+var lastLoadedRow = 0;
+
 jQuery(document).ready(function() {
-    var lastLoadedRow = 0;
     fetchData();
 
     setInterval(function(){
