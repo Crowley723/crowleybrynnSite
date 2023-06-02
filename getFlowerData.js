@@ -18,7 +18,7 @@ function fetchData() {
         },
         dataType: 'json',
         success: function(data){
-            lastLoadedRow = updatePage(data, lastLoadedRow);
+            lastLoadedRow = updatePage(data);
             console.log('Last-Loaded-Row: ' + lastLoadedRow);
         },
         error: function(xhr, status, error) {
@@ -27,7 +27,7 @@ function fetchData() {
     });
 }
 
-function updatePage(data, lastLoadedRow){
+function updatePage(data){
     var table = $('#dataTable');
     var highestId = lastLoadedRow;
     var tableBody = table.find('tbody');
@@ -59,5 +59,5 @@ function updatePage(data, lastLoadedRow){
             tableBody.prepend(newRow);
         }
     }
-    return highestId;
+    return highestId; // Return the updated value of highestId
 }
