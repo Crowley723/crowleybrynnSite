@@ -23,7 +23,7 @@ error_reporting(E_ALL);
         </thead>
             <tbody id="tableBody">
             </tbody>
-        <script src="./getFlowerData.js"></script>
         </table>
+        <script src="./getFlowerData.js"></script>
     </body>
 </html>
