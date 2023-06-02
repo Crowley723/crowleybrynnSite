@@ -42,8 +42,8 @@ function updatePage(data, callback) {
     for (var i = data.length - 1; i >= 0; i--) {
         var point = data[i];
 
-        if (point.id > highestId) {
-            highestId = point.id;
+        if (point['ID'] > highestId) {
+            highestId = point['ID'];
             
         }
         console.log('HighestID: ' + highestId);
