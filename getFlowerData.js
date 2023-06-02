@@ -19,7 +19,12 @@ function fetchData() {
         dataType: 'json',
         success: function(data) {
             updatePage(data, function(updatedRow) {
-                console.log('Data: ' + data);
+                if(typeof data ==='undefined'){
+                    console.log('Data undefined');
+                } else{
+                    console.log('Data: ' + data);
+                }
+                
                 lastLoadedRow = updatedRow; // Update the value of lastLoadedRow
                 console.log('Last-Loaded-Row: ' + lastLoadedRow);
             });
