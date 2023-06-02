@@ -27,6 +27,7 @@ function fetchData() {
                 
                 lastLoadedRow = updatedRow; // Update the value of lastLoadedRow
                 console.log('Last-Loaded-Row: ' + lastLoadedRow);
+                console.log('Data: ' + data);
             });
         },
         error: function(xhr, status, error) {
