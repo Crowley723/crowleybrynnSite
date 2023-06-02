@@ -3,7 +3,7 @@ var lastLoadedRow = 0;
 jQuery(document).ready(function() {
     fetchData();
 
-    setInterval(function(){
+    setInterval(function() {
         fetchData();
     }, 30000);
 });
@@ -13,11 +13,11 @@ function fetchData() {
     $.ajax({
         url: 'getFlowerData.php',
         type: 'GET',
-        headers:{
+        headers: {
             'Last-Loaded-Row': lastLoadedRow
         },
         dataType: 'json',
-        success: function(data){
+        success: function(data) {
             updatePage(data, function(updatedRow) {
                 lastLoadedRow = updatedRow; // Update the value of lastLoadedRow
                 console.log('Last-Loaded-Row: ' + lastLoadedRow);
@@ -29,20 +29,20 @@ function fetchData() {
     });
 }
 
-function updatePage(data, callback){
+function updatePage(data, callback) {
     var table = $('#dataTable');
     var highestId = lastLoadedRow;
     var tableBody = table.find('tbody');
-    
+
     if (tableBody.length === 0) {
         tableBody = $('<tbody>');
-        table.append(tableBody);
+        table.prepend(tableBody); // Prepend the table body to maintain newest item at the top
     }
 
-    for(var i = data.length - 1; i >= 0; i--){
+    for (var i = data.length - 1; i >= 0; i--) {
         var point = data[i];
 
-        if(point.id > highestId){
+        if (point.id > highestId) {
             highestId = point.id;
         }
         if (
@@ -50,15 +50,15 @@ function updatePage(data, callback){
             point.hasOwnProperty('Temperature(C)') &&
             point.hasOwnProperty('Humidity(%)') &&
             point.hasOwnProperty('Timestamp')
-        ) {                
+        ) {
             // Create and append the HTML for the data point
             var newRow = $('<tr>');
             newRow.append('<td>' + point['ID'] + '</td>');
             newRow.append('<td>' + point['Temperature(C)'] + '</td>');
             newRow.append('<td>' + point['Humidity(%)'] + '</td>');
             newRow.append('<td>' + point['Timestamp'] + '</td>');
-            
-            // Append the new data point to the container
+
+            // Prepend the new data point to the container
             tableBody.prepend(newRow);
         }
     }
