@@ -1,5 +1,4 @@
 var lastLoadedRow = 0;
-var data;
 
 jQuery(document).ready(function() {
     fetchData();
