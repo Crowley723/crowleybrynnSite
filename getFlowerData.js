@@ -18,10 +18,10 @@ function fetchData() {
         },
         dataType: 'json',
         success: function(data){
-            lastLoadedRow = updatePage(data, function(updatedRow) {
+            updatePage(data, function(updatedRow) {
                 lastLoadedRow = updatedRow; // Update the value of lastLoadedRow
+                console.log('Last-Loaded-Row: ' + lastLoadedRow);
             });
-            console.log('Last-Loaded-Row: ' + lastLoadedRow);
         },
         error: function(xhr, status, error) {
             console.log(status + ': ' + error);
@@ -64,4 +64,3 @@ function updatePage(data, callback){
     }
     callback(highestId); // Call the callback with the updated value
 }
-
