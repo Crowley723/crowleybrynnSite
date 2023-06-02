@@ -18,7 +18,9 @@ function fetchData() {
         },
         dataType: 'json',
         success: function(data){
-            lastLoadedRow = updatePage(data);
+            lastLoadedRow = updatePage(data, function(updatedRow) {
+                lastLoadedRow = updatedRow; // Update the value of lastLoadedRow
+            });
             console.log('Last-Loaded-Row: ' + lastLoadedRow);
         },
         error: function(xhr, status, error) {
@@ -27,10 +29,11 @@ function fetchData() {
     });
 }
 
-function updatePage(data){
+function updatePage(data, callback){
     var table = $('#dataTable');
     var highestId = lastLoadedRow;
     var tableBody = table.find('tbody');
+    
     if (tableBody.length === 0) {
         tableBody = $('<tbody>');
         table.append(tableBody);
@@ -59,5 +62,6 @@ function updatePage(data){
             tableBody.prepend(newRow);
         }
     }
-    return highestId; // Return the updated value of highestId
+    callback(highestId); // Call the callback with the updated value
 }
+
