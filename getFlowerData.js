@@ -44,8 +44,9 @@ function updatePage(data, callback) {
 
         if (point.id > highestId) {
             highestId = point.id;
-            console.log('HighestID: ' + highestId);
+            
         }
+        console.log('HighestID: ' + highestId);
         if (
             point.hasOwnProperty('ID') &&
             point.hasOwnProperty('Temperature(C)') &&
