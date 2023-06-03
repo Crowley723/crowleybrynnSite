@@ -17,7 +17,7 @@ function fetchData() {
             'Last-Loaded-Row': lastLoadedRow
         },
         dataType: 'json',
-        success: function(data) {
+        success: function(data) { 
             updatePage(data, function(updatedRow) {
                 if(typeof data ==='undefined'){
                     console.log('Data undefined');
