@@ -24,6 +24,6 @@
             <tbody id="tableBody">
             </tbody>
         </table>
-        <script src="./getFlowerData.js"></script>
+        <script src="./getFlowerDataSimple.js"></script>
     </body>
 </html>
