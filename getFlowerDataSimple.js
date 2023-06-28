@@ -19,7 +19,7 @@ function fetchData(){
         }, error: function(xhr, status, error){
             console.log(status + ': ' + error);
         }
-    })
+    });
 }
 
 function updatePage(data, callback) {
