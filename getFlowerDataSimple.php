@@ -15,7 +15,7 @@
         die("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
         
     }
-    $headers = getallheaders();
+    //$headers = getallheaders();
     /*$lastLoadedRow = isset($headers['Last-Loaded-Row']) ? $headers['Last-Loaded-Row'] : null;
     if(is_null($lastLoadedRow)){
         $lastLoadedRow = 0;
