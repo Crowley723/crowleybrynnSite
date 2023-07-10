@@ -1,6 +1,6 @@
 var highestId = 0;
 
-(document).ready(function(){
+jQuery(document).ready(function(){
     fetchData();
     setInterval(function(){
         fetchData();
