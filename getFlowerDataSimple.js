@@ -1,4 +1,6 @@
-jQuery(document).ready(function(){
+var highestId = 0;
+
+(document).ready(function(){
     fetchData();
     setInterval(function(){
         fetchData();
@@ -22,7 +24,7 @@ function fetchData(){
     });
 }
 
-function updatePage(data, callback) {
+function updatePage(data) {
     var table = $('#dataTable');
     var tableBody = table.find('tbody');
     if (tableBody.length === 0) {
@@ -31,9 +33,6 @@ function updatePage(data, callback) {
     }
     for (var i = data.length - 1; i >= 0; i--) {
         var point = data[i];
-
-        console.log('Data: ' + data);
-        console.log('HighestID: ' + highestId);
         if (
             point.hasOwnProperty('ID') &&
             point.hasOwnProperty('Temperature(C)') &&
@@ -41,6 +40,9 @@ function updatePage(data, callback) {
             point.hasOwnProperty('Timestamp')
         ) {
             // Create and append the HTML for the data point
+            if(point['ID'] > highestId){
+                highestId = point['ID'];
+            }
             var newRow = $('<tr>');
             newRow.append('<td>' + point['ID'] + '</td>');
             newRow.append('<td>' + point['Temperature(C)'] + '</td>');

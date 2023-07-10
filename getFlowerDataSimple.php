@@ -14,13 +14,13 @@
         if($conn -> connect_error){
             throw new Exception("Database Connection Error, Error No.: ".$conn->connect_errno." | ".$conn->connect_error);
         }
-        //$headers = getallheaders();
-        /*$lastLoadedRow = isset($headers['Last-Loaded-Row']) ? $headers['Last-Loaded-Row'] : null;
+        $headers = getallheaders();
+        $lastLoadedRow = isset($headers['Last-Loaded-Row']) ? $headers['Last-Loaded-Row'] : null;
         if(is_null($lastLoadedRow)){
             $lastLoadedRow = 0;
-        }*/
-        //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
-        $sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers ORDER BY id DESC";
+        }
+        $sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
+        //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers ORDER BY id DESC";
         if($result = $conn->query($sql)){
             while($row = $result->fetch_assoc()){
                 $row_id = $row["ID"]; 
