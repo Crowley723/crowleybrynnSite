@@ -1,4 +1,4 @@
-var highestId = 0;
+var highestId = "0";
 
 jQuery(document).ready(function(){
     fetchData();
