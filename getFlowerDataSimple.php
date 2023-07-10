@@ -8,6 +8,7 @@
     $database = "sensorData";
     $username = getenv('SQLUSER');
     $password = getenv('SQLPASS');
+    $data = "";
     try{
         $conn = new mysqli($hostname, $username, $password, $database);
 
@@ -21,6 +22,7 @@
         }
         $sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
         //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers ORDER BY id DESC";
+        
         if($result = $conn->query($sql)){
             while($row = $result->fetch_assoc()){
                 $row_id = $row["ID"]; 
