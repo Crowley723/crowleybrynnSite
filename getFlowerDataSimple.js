@@ -12,11 +12,13 @@ function fetchData(){
         url: 'getFlowerDataSimple.php',
         type: 'GET',
         headers:{
+            
             'Last-Loaded-Row': highestId
         },
         dataType: 'json',
         success: function(data) {
             updatePage(data)
+            console.log(highestId);
 
         }, error: function(xhr, status, error){
             console.log(status + ': ' + error);
