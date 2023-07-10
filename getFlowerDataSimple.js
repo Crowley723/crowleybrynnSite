@@ -42,7 +42,7 @@ function updatePage(data) {
             point.hasOwnProperty('Timestamp')
         ) {
             // Create and append the HTML for the data point
-            if(point['ID'] > highestId){
+            if(parseInt(point['ID']) > parseInt(highestId)){
                 highestId = point['ID'];
             }
             var newRow = $('<tr>');
