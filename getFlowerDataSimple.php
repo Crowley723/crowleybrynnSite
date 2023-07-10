@@ -8,7 +8,7 @@
     $database = "sensorData";
     $username = getenv('SQLUSER');
     $password = getenv('SQLPASS');
-    $data = "";
+    $data = '';
     try{
         $conn = new mysqli($hostname, $username, $password, $database);
 
