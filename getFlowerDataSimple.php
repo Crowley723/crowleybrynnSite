@@ -24,11 +24,12 @@
         if($result = $conn->query($sql)){
             while($row = $result->fetch_assoc()){
                 $row_id = $row["ID"]; 
-                $row_Temperature = round($row["Temperature(C)"], 3);
+                $row_Temperature = $row["Temperature(C)"];
                 $row_Humidity = $row["Humidity(%)"];
                 $row_timestamp = $row["Timestamp"];
                 //changing temp to F - in the future there are plans to allow user to change units.
-                $row_Temperature = ($row_Temperature * (9.0/5.0)) + 32;
+                $row_Temperature = round(($row_Temperature * (9.0/5.0)) + 32,3);
+                
 
                 $data[] = array(
                     'ID' => $row_id,
