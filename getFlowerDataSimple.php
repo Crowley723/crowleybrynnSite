@@ -20,12 +20,24 @@
     if(is_null($lastLoadedRow)){
         $lastLoadedRow = 0;
     }*/
-    $query = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
-    $result = $conn->query($query);
+    $sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
+    if($result = $conn->query($sql)){
+        while($row = $result->fetch_assoc()){
+            $row_id = $row["ID"]; 
+            $row_sensor = $row["Sensor"];
+            $row_Temperature = $row["Temperature(C)"];
+            $row_Humidity = $row["Humidity(%)"];
+            $row_timestamp = $row["Timestamp"];
+            //changing temp to F - in the future there are plans to allow user to change units.
+            $row_Temperature = ($row_Temperature * (9.0/5.0)) + 32;
 
-    $data = array();
-    if($result->num_rows > 0){
-        $data = $result->fetch_all(MYSQLI_ASSOC);
+            $data[] = array(
+                'ID' => $row_id;
+                'Temperature(C)' => $row_Temperature;
+                'Humidity(%)' => $row_Humidity;
+                'Timestamp' => $row_timestamp;
+            );
+        }
     }
     header('Content-Type: application/json');
     echo json_encode($data, JSON_THROW_ON_ERROR);
