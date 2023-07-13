@@ -35,7 +35,7 @@
         <div class="container">
             <h1 class="header">Page Not Found!</h1>
             <!--img class="img" src="/assets/cookie.jpg" alt="A free cookie!"//-->
-            <img class="img" src="https://tenor.com/view/xqc-spin-gif-21121522" alt="A free cookie!">
+            <img class="img" src="/assets/xqc-spin.gif" alt="Spinny">
             
         
             <div class="bodytext">
