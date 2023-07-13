@@ -35,7 +35,9 @@
         <div class="container">
             <h1 class="header">Page Not Found!</h1>
             <!--img class="img" src="/assets/cookie.jpg" alt="A free cookie!"//-->
-            <div class="img" data-postid="21121522" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%"><a href="https://tenor.com/view/xqc-spin-gif-21121522">Xqc Spin GIF</a>from <a href="https://tenor.com/search/xqc-gifs">Xqc GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <img class="img" src="https://tenor.com/view/xqc-spin-gif-21121522" alt="A free cookie!">
+            
+        
             <div class="bodytext">
                 <p>You managed to reach a place with nothing!</p>
                 <p>So heres a cookie and a <a href="/">redirect.</a>.</p>
