@@ -14,7 +14,7 @@ $password = getenv('NotiSQLPASS');
 $validApiKey = getenv('NOTIFICATIONBASEKEY');
 $api_key = $sensor = "";
 
-
+echo $validApiKey;
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     echo '\nServer\n';
