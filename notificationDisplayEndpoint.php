@@ -17,8 +17,6 @@ $api_key = $sensor = "";
 
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    echo \nServer\n;
-    echo implode($_SERVER);
     echo \nGet\n;
     echo implode($_GET);
     echo \n;
