@@ -23,9 +23,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     echo implode($_GET);
     echo '\n';
     if(isset($_GET['api_key'])){
-        $apiKey = test_input($_GET["api_key"]);
+        $api_key = test_input($_GET["api_key"]);
     }else{
-        echo "No API Key provided.";
+        echo "\nNo API Key provided.";
         
         //http_response_code(403);
         exit(-1);
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     }
     echo "\n";
 
-    if($apiKey == $validApiKey){
+    if($api_key == $validApiKey){
         $dbConn = new mysqli($servername, $username, $password, $dbname);
         if ($dbConn->connect_error) {
             die("Database connection failed: " . mysqli_connect_error());
