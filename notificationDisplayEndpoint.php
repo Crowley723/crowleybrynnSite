@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // Replace these values with your actual database and API key information
 $servername = "localhost";
 // REPLACE with your Database name
@@ -13,7 +16,6 @@ $validApiKey = getenv('NOTIFICATIONBASEKEY');
 // Get the API key from the request
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    echo $_GET;
     if(isset($_GET['api_key'])){
         $apiKey =  test_input($_GET["api_key"]);
     }else{
