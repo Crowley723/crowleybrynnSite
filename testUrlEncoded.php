@@ -11,8 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // For example, you can perform API key validation, data processing, etc.
         
         // Respond with a success message
-        $response = array('message' => 'Request successful', 'api_key' => $api_key, 'sensor' => $sensor);
-        echo json_encode($response);
+        $validApiKey = getenv('NOTIFICATIONBASEKEY');
+        if($api_key == $validApiKey){
+            $response = array('message' => 'Request successful', 'api_key' => $api_key, 'sensor' => $sensor);
+            echo json_encode($response);
+        }else {
+            // Respond with an error message if 'api_key' and 'sensor' parameters are missing
+            $error_response = array('error' => 'Wrong api key');
+            echo json_encode($error_response);
+        }
+        
     } else {
         // Respond with an error message if 'api_key' and 'sensor' parameters are missing
         $error_response = array('error' => 'Missing parameters');
