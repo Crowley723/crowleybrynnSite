@@ -14,6 +14,16 @@ $password = getenv('NotiSQLPASS');
 $validApiKey = getenv('NOTIFICATIONBASEKEY');
 
 // Get the API key from the request
+echo "Raw Request Headers:\n";
+$headers = getallheaders();
+foreach ($headers as $name => $value) {
+    echo "$name: $value\n";
+}
+
+// Output the raw request content (payload)
+echo "\nRaw Request Content:\n";
+$requestContent = file_get_contents('php://input');
+echo $requestContent;
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if(isset($_GET['api_key'])){
