@@ -26,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     }
 
     echo "\n";
+    var_dump($validApiKey, $api_key);
     echo $validApiKey;
     echo $api_key;
     if($api_key == $validApiKey){
