@@ -16,7 +16,7 @@ $api_key = $sensor = "";
 
 
 
-if($_SERVER["REQUEST_METHOD"] == "GET"){
+if($_SERVER["REQUEST_METHOD"] === "GET"){
     if (isset($_GET['api_key']) && isset($_GET['sensor'])) {
         $api_key = htmlspecialchars($_GET['api_key']);
         $sensor = htmlspecialchars($_GET['sensor']);
