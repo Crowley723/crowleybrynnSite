@@ -12,22 +12,13 @@ $username = getenv('NotiSQLUSER');
 $password = getenv('NotiSQLPASS');
 
 $validApiKey = getenv('NOTIFICATIONBASEKEY');
+$api_key = $sensor = ""
 
-// Get the API key from the request
-echo "Raw Request Headers:\n";
-$headers = getallheaders();
-foreach ($headers as $name => $value) {
-    echo "$name: $value\n";
-}
+echo $_SERVER;
 
-// Output the raw request content (payload)
-echo "\nRaw Request Content:\n";
-$requestContent = file_get_contents('php://input');
-echo $requestContent;
-parse_str($requestContent, $requestData);
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    if(isset($requestContent['api_key'])){
-        $apiKey =  test_input($_GET["api_key"]);
+    if(isset($_GET['api_key'])){
+        $apiKey = test_input($_GET["api_key"]);
     }else{
         echo "No API Key provided.";
         
