@@ -24,9 +24,9 @@ foreach ($headers as $name => $value) {
 echo "\nRaw Request Content:\n";
 $requestContent = file_get_contents('php://input');
 echo $requestContent;
-
+parse_str($requestContent, $requestData);
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    if(isset($_GET['api_key'])){
+    if(isset($requestContent['api_key'])){
         $apiKey =  test_input($_GET["api_key"]);
     }else{
         echo "No API Key provided.";
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         //http_response_code(403);
         exit(-1);
     }
-    if(isset($_GET['sensor'])){
+    if(isset($requestContent['sensor'])){
         $sensor = test_input($_GET['sensor']);
     }else{
         echo "No Sensor Specified.";
