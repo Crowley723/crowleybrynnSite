@@ -24,6 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     echo '\n';
     if(isset($_GET['api_key'])){
         $api_key = test_input($_GET["api_key"]);
+        echo "Received API Key: " . $api_key;
     }else{
         echo "\nNo API Key provided.";
         
