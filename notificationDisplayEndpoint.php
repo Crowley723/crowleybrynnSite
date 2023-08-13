@@ -17,27 +17,14 @@ $api_key = $sensor = "";
 echo $validApiKey;
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    echo '\nServer\n';
-    echo implode($_SERVER);
-    echo '\nGet\n';
-    echo implode($_GET);
-    echo '\n';
-    if(isset($_GET['api_key'])){
-        $api_key = test_input($_GET["api_key"]);
-        echo "Received API Key: " . $api_key;
+    if (isset($_GET['api_key']) && isset($_GET['sensor'])) {
+        $api_key = htmlspecialchars($_GET['api_key']);
+        $sensor = htmlspecialchars($_GET['sensor']);
     }else{
-        echo "\nNo API Key provided.";
-        
-        //http_response_code(403);
-        exit(-1);
+        $error_response = array('error' => 'Missing parameters');
+        echo json_encode($error_response);
     }
-    if(isset($requestContent['sensor'])){
-        $sensor = test_input($_GET['sensor']);
-    }else{
-        echo "No Sensor Specified.";
-        http_response_code(403);
-        exit(-1);
-    }
+
     echo "\n";
 
     if($api_key == $validApiKey){
