@@ -13,18 +13,20 @@ $validApiKey = getenv('NOTIFICATIONBASEKEY');
 // Get the API key from the request
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
+    echo $_GET;
     if(isset($_GET['api_key'])){
         $apiKey =  test_input($_GET["api_key"]);
     }else{
         echo "No API Key provided.";
-        http_response_code(301);
+        
+        http_response_code(403);
         exit(-1);
     }
     if(isset($_GET['sensor'])){
         $sensor = test_input($_GET['sensor']);
     }else{
         echo "No Sensor Specified.";
-        http_response_code(301);
+        http_response_code(403);
         exit(-1);
     }
     echo "\n";
@@ -61,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     } else{
         echo "Wrong API Key provided";
-        http_response_code(301);
+        http_response_code(403);
         exit();
     }
 }
