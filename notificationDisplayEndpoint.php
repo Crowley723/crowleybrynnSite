@@ -14,9 +14,10 @@ $password = getenv('NotiSQLPASS');
 $validApiKey = getenv('NOTIFICATIONBASEKEY');
 $api_key = $sensor = ""
 
-echo $_SERVER;
+
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
+    echo $_GET;
     if(isset($_GET['api_key'])){
         $apiKey = test_input($_GET["api_key"]);
     }else{
