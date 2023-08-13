@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     }else{
         echo "No API Key provided.";
         
-        http_response_code(403);
+        //http_response_code(403);
         exit(-1);
     }
     if(isset($_GET['sensor'])){
