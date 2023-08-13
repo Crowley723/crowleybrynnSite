@@ -25,10 +25,6 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
         echo json_encode($error_response);
     }
 
-    echo "\n";
-    var_dump($validApiKey, $api_key);
-    echo $validApiKey;
-    echo $api_key;
     if($api_key == $validApiKey){
         $dbConn = new mysqli($servername, $username, $password, $dbname);
         if ($dbConn->connect_error) {
