@@ -17,7 +17,11 @@ $api_key = $sensor = "";
 
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    echo $_SERVER;
+    echo \nServer\n;
+    echo implode($_SERVER);
+    echo \nGet\n;
+    echo implode($_GET);
+    echo \n;
     if(isset($_GET['api_key'])){
         $apiKey = test_input($_GET["api_key"]);
     }else{
