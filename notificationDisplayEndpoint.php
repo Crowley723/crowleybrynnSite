@@ -14,7 +14,7 @@ $password = getenv('NotiSQLPASS');
 $validApiKey = getenv('NOTIFICATIONBASEKEY');
 $api_key = $sensor = "";
 
-echo $validApiKey;
+
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (isset($_GET['api_key']) && isset($_GET['sensor'])) {
@@ -26,7 +26,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     }
 
     echo "\n";
-
+    echo $validApiKey;
+    echo $api_key;
     if($api_key == $validApiKey){
         $dbConn = new mysqli($servername, $username, $password, $dbname);
         if ($dbConn->connect_error) {
