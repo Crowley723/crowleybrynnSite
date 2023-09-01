@@ -61,6 +61,8 @@ function updatePage(data) {
 
             // Prepend the new data point to the container
             tableBody.prepend(newRow);
+        } else{
+            console.log("Point doesnt have correct properties!");
         }
     }
 
