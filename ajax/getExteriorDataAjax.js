@@ -45,6 +45,7 @@ function updatePage(data) {
             point.hasOwnProperty('PM10') &&
             point.hasOwnProperty('Timestamp')
         ) {
+            console.log("Point has correct properties!");
             // Create and append the HTML for the data point
             if(parseInt(point['ID']) > parseInt(highestId)){
                 highestId = point['ID'];
@@ -63,6 +64,7 @@ function updatePage(data) {
             tableBody.prepend(newRow);
         } else{
             console.log("Point doesnt have correct properties!");
+            console.log(point);
         }
     }
 
