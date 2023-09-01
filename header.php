@@ -132,7 +132,7 @@
   </div>
   <a href="/downloadCSV.php"<?php if($_SERVER['REQUEST_URI'] == "/downloadCSV.php"){echo " class=\"active\"";} ?>>Download CSV</a>
   <div class="dropdown">
-    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/loadExteriorDataAjax.php") !== false || strpos($_SERVER['REQUEST_URI'], "/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>View Table Ajax
+    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/loadExteriorDataAjax.php") !== false || strpos($_SERVER['REQUEST_URI'], "/ajax/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>View Table Ajax
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
