@@ -21,7 +21,7 @@
             $lastLoadedRow = 0;
         }
         //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
-        $sql = "SELECT `ID`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `PM1`, `PM2.5`, `PM10`, `Timestamp` FROM Exterior WHERE ID > " . $lastLoadedRow . " ORDER BY `ID` DESC";
+        $sql = "SELECT `ID`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `PM1`, `PM2.5`, `PM10`, `Timestamp` FROM Exterior WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
 
         
         if($result = $conn->query($sql)){
