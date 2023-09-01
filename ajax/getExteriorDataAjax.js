@@ -35,6 +35,7 @@ function updatePage(data) {
     }
     for (var i = data.length - 1; i >= 0; i--) {
         var point = data[i];
+        console.log(data[i]);
         if (
             point.hasOwnProperty('ID') &&
             point.hasOwnProperty('Temperature(C)') &&
