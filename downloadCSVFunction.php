@@ -61,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       fputcsv($output, $row);
     }
   }
-  }
   fclose($output);
   $conn->close();
   exit();
