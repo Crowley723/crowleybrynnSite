@@ -11,7 +11,7 @@ error_reporting(E_ALL);
         <?php include "../header.php" ?>
     </head>
     <body>
-        <h1 style="padding-left:16px">Flower Data</h1>
+        <h1 style="padding-left:16px">Exterior Data</h1>
         <table id="dataTable" cellspacing="5" cellpadding="5" style="padding-left:7px">
         <thead>
             <tr>
@@ -19,10 +19,10 @@ error_reporting(E_ALL);
             <th><b>Temperature(C)</b></th>
             <th><b>Pressure(bar)</b></th>
             <th><b>Humidity(%)</b></th>
-            <th><b>Temperature(C)</b></th>
             <th><b>PM1</b></th>
             <th><b>PM2.5</b></th>
             <th><b>PM10</b></th>
+            <th><b>Timestamp</b></th>
             </tr>
         </thead>
             <tbody id="tableBody">
