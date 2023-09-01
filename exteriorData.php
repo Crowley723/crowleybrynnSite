@@ -57,7 +57,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
           $row_PM25 = $row["PM2.5"];
           $row_PM10 = $row["PM10"];
           $row_reading_time = $row["Timestamp"];
-	  $row_Pressure = ($row_Pressure / 1000.0);
+	        $row_Pressure = ($row_Pressure / 1000.0);
 
           // Uncomment to set timezone to - 1 hour (you can change 1 to any number)
           //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time - 1 hours"));

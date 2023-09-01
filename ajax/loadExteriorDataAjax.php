@@ -6,9 +6,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dyn. Load Flower Data</title>
+        <title>Dyn. Load Exterior Data</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <?php include "./header.php" ?>
+        <?php include "/header.php" ?>
     </head>
     <body>
         <h1 style="padding-left:16px">Flower Data</h1>
@@ -17,13 +17,17 @@
             <tr>
             <th><b>ID</b></th>
             <th><b>Temperature(C)</b></th>
+            <th><b>Pressure(bar)</b></th>
             <th><b>Humidity(%)</b></th>
-            <th><b>Timestamp</b></th>
+            <th><b>Temperature(C)</b></th>
+            <th><b>PM1</b></th>
+            <th><b>PM2.5</b></th>
+            <th><b>PM10</b></th>
             </tr>
         </thead>
             <tbody id="tableBody">
             </tbody>
         </table>
-        <script src="./getFlowerDataSimple.js"></script>
+        <script src="./getExteriorDataSimple.js"></script>
     </body>
 </html>
