@@ -28,6 +28,6 @@
             <tbody id="tableBody">
             </tbody>
         </table>
-        <script src="./getExteriorDataSimple.js"></script>
+        <script src="/ajax/getExteriorDataSimple.js"></script>
     </body>
 </html>
