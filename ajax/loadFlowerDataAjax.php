@@ -8,7 +8,7 @@ error_reporting(E_ALL);
     <head>
         <title>Dyn. Load Flower Data</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <?php include "../header.php" ?>
+        <?php include "/header.php" ?>
     </head>
     <body>
         <h1 style="padding-left:16px">Flower Data</h1>
