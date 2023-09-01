@@ -16,7 +16,7 @@ error_reporting(E_ALL);
         <thead>
             <tr>
             <th><b>ID</b></th>
-            <th><b>Temperature(C)</b></th>
+            <th><b>Temperature(F)</b></th>
             <th><b>Pressure(bar)</b></th>
             <th><b>Humidity(%)</b></th>
             <th><b>PM1</b></th>

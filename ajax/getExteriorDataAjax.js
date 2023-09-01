@@ -38,7 +38,7 @@ function updatePage(data) {
         console.log(data[i]);
         if (
             point.hasOwnProperty('ID') &&
-            point.hasOwnProperty('Temperature(C)') &&
+            point.hasOwnProperty('Temperature(F)') &&
             point.hasOwnProperty('Pressure(bar)') &&
             point.hasOwnProperty('Humidity(%)') &&
             point.hasOwnProperty('PM1') &&
@@ -53,7 +53,7 @@ function updatePage(data) {
             }
             var newRow = $('<tr>');
             newRow.append('<td>' + point['ID'] + '</td>');
-            newRow.append('<td>' + point['Temperature(C)'] + '</td>');
+            newRow.append('<td>' + point['Temperature(F)'] + '</td>');
             newRow.append('<td>' + point['Pressure(bar)'] + '</td>');
             newRow.append('<td>' + point['Humidity(%)'] + '</td>');
             newRow.append('<td>' + point['PM1'] + '</td>');
