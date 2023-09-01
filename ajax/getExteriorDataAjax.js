@@ -38,7 +38,11 @@ function updatePage(data) {
         if (
             point.hasOwnProperty('ID') &&
             point.hasOwnProperty('Temperature(C)') &&
+            point.hasOwnProperty('Pressure(bar)') &&
             point.hasOwnProperty('Humidity(%)') &&
+            point.hasOwnProperty('PM1') &&
+            point.hasOwnProperty('PM2.5') &&
+            point.hasOwnProperty('PM10') &&
             point.hasOwnProperty('Timestamp')
         ) {
             // Create and append the HTML for the data point
@@ -48,7 +52,11 @@ function updatePage(data) {
             var newRow = $('<tr>');
             newRow.append('<td>' + point['ID'] + '</td>');
             newRow.append('<td>' + point['Temperature(C)'] + '</td>');
+            newRow.append('<td>' + point['Pressure(bar)'] + '</td>');
             newRow.append('<td>' + point['Humidity(%)'] + '</td>');
+            newRow.append('<td>' + point['PM1'] + '</td>');
+            newRow.append('<td>' + point['PM2.5'] + '</td>');
+            newRow.append('<td>' + point['PM10'] + '</td>');
             newRow.append('<td>' + point['Timestamp'] + '</td>');
 
             // Prepend the new data point to the container
