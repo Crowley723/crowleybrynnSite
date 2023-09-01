@@ -1,14 +1,14 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Dyn. Load Flower Data</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <?php include "header.php" ?>
+        <?php include "../header.php" ?>
     </head>
     <body>
         <h1 style="padding-left:16px">Flower Data</h1>
