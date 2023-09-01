@@ -35,7 +35,7 @@ function updatePage(data) {
     }
     for (var i = data.length - 1; i >= 0; i--) {
         var point = data[i];
-        console.log(data[i]);
+        //console.log(data[i]);
         if (
             point.hasOwnProperty('ID') &&
             point.hasOwnProperty('Temperature(F)') &&
@@ -46,7 +46,7 @@ function updatePage(data) {
             point.hasOwnProperty('PM10') &&
             point.hasOwnProperty('Timestamp')
         ) {
-            console.log("Point has correct properties!");
+            //console.log("Point has correct properties!");
             // Create and append the HTML for the data point
             if(parseInt(point['ID']) > parseInt(highestId)){
                 highestId = point['ID'];
@@ -65,7 +65,7 @@ function updatePage(data) {
             tableBody.prepend(newRow);
         } else{
             console.log("Point doesnt have correct properties!");
-            console.log(point);
+            //console.log(point);
         }
     }
 
