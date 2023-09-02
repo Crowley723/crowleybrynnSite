@@ -28,14 +28,13 @@
             while($row = $result->fetch_assoc()){
                 $row_id = $row["ID"];
                 $row_Temperature = $row["Temperature(C)"];
-                $row_Pressure = $row["Pressure(bar)"]; 
+                $row_Pressure = round(($row["Pressure(bar)"]/1000.0), 4); 
                 $row_Humidity = $row["Humidity(%)"]; 
                 $row_PM01 = $row["PM1"];
                 $row_PM25 = $row["PM2.5"];
                 $row_PM10 = $row["PM10"];
                 $row_reading_time = $row["Timestamp"];
-	            $row_Pressure = ($row_Pressure / 1000.0);
-                round($row_Pressure, 4)
+	            //$row_Pressure = ($row_Pressure / 1000.0);
                 //changing temp to F - in the future there are plans to allow user to change units.
                 $row_Temperature = round(($row_Temperature * (9.0/5.0)) + 32,3);
                 
