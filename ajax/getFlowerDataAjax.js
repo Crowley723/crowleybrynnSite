@@ -33,27 +33,28 @@ function updatePage(data) {
         tableBody = $('<tbody>');
         table.prepend(tableBody); // Prepend the table body to maintain newest item at the top
     }
-    for (var i = data.length - 1; i >= 0; i--) {
-        var point = data[i];
-        if (
-            point.hasOwnProperty('ID') &&
-            point.hasOwnProperty('Temperature(C)') &&
-            point.hasOwnProperty('Humidity(%)') &&
-            point.hasOwnProperty('Timestamp')
-        ) {
-            // Create and append the HTML for the data point
-            if(parseInt(point['ID']) > parseInt(highestId)){
-                highestId = point['ID'];
-            }
-            var newRow = $('<tr>');
-            newRow.append('<td>' + point['ID'] + '</td>');
-            newRow.append('<td>' + point['Temperature(C)'] + '</td>');
-            newRow.append('<td>' + point['Humidity(%)'] + '</td>');
-            newRow.append('<td>' + point['Timestamp'] + '</td>');
+    if(data.length > 0){
+        for (var i = data.length - 1; i >= 0; i--) {
+            var point = data[i];
+            if (
+                point.hasOwnProperty('ID') &&
+                point.hasOwnProperty('Temperature(C)') &&
+                point.hasOwnProperty('Humidity(%)') &&
+                point.hasOwnProperty('Timestamp')
+            ) {
+                // Create and append the HTML for the data point
+                if(parseInt(point['ID']) > parseInt(highestId)){
+                    highestId = point['ID'];
+                }
+                var newRow = $('<tr>');
+                newRow.append('<td>' + point['ID'] + '</td>');
+                newRow.append('<td>' + point['Temperature(C)'] + '</td>');
+                newRow.append('<td>' + point['Humidity(%)'] + '</td>');
+                newRow.append('<td>' + point['Timestamp'] + '</td>');
 
-            // Prepend the new data point to the container
-            tableBody.prepend(newRow);
+                // Prepend the new data point to the container
+                tableBody.prepend(newRow);
+            }
         }
     }
-
 }

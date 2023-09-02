@@ -12,7 +12,6 @@ function fetchData(){
         url: '/ajax/getExteriorDataAjax.php',
         type: 'GET',
         headers:{
-            
             'Last-Loaded-Row': highestId
         },
         dataType: 'json',
@@ -33,40 +32,41 @@ function updatePage(data) {
         tableBody = $('<tbody>');
         table.prepend(tableBody); // Prepend the table body to maintain newest item at the top
     }
-    for (var i = data.length - 1; i >= 0; i--) {
-        var point = data[i];
-        //console.log(data[i]);
-        if (
-            point.hasOwnProperty('ID') &&
-            point.hasOwnProperty('Temperature(F)') &&
-            point.hasOwnProperty('Pressure(bar)') &&
-            point.hasOwnProperty('Humidity(%)') &&
-            point.hasOwnProperty('PM1') &&
-            point.hasOwnProperty('PM2.5') &&
-            point.hasOwnProperty('PM10') &&
-            point.hasOwnProperty('Timestamp')
-        ) {
-            //console.log("Point has correct properties!");
-            // Create and append the HTML for the data point
-            if(parseInt(point['ID']) > parseInt(highestId)){
-                highestId = point['ID'];
-            }
-            var newRow = $('<tr>');
-            newRow.append('<td>' + point['ID'] + '</td>');
-            newRow.append('<td>' + point['Temperature(F)'] + '</td>');
-            newRow.append('<td>' + point['Pressure(bar)'] + '</td>');
-            newRow.append('<td>' + point['Humidity(%)'] + '</td>');
-            newRow.append('<td>' + point['PM1'] + '</td>');
-            newRow.append('<td>' + point['PM2.5'] + '</td>');
-            newRow.append('<td>' + point['PM10'] + '</td>');
-            newRow.append('<td>' + point['Timestamp'] + '</td>');
+    if(data.length > 0){
+        for (var i = data.length - 1; i >= 0; i--) {
+            var point = data[i];
+            //console.log(data[i]);
+            if (
+                point.hasOwnProperty('ID') &&
+                point.hasOwnProperty('Temperature(F)') &&
+                point.hasOwnProperty('Pressure(bar)') &&
+                point.hasOwnProperty('Humidity(%)') &&
+                point.hasOwnProperty('PM1') &&
+                point.hasOwnProperty('PM2.5') &&
+                point.hasOwnProperty('PM10') &&
+                point.hasOwnProperty('Timestamp')
+            ) {
+                //console.log("Point has correct properties!");
+                // Create and append the HTML for the data point
+                if(parseInt(point['ID']) > parseInt(highestId)){
+                    highestId = point['ID'];
+                }
+                var newRow = $('<tr>');
+                newRow.append('<td>' + point['ID'] + '</td>');
+                newRow.append('<td>' + point['Temperature(F)'] + '</td>');
+                newRow.append('<td>' + point['Pressure(bar)'] + '</td>');
+                newRow.append('<td>' + point['Humidity(%)'] + '</td>');
+                newRow.append('<td>' + point['PM1'] + '</td>');
+                newRow.append('<td>' + point['PM2.5'] + '</td>');
+                newRow.append('<td>' + point['PM10'] + '</td>');
+                newRow.append('<td>' + point['Timestamp'] + '</td>');
 
-            // Prepend the new data point to the container
-            tableBody.prepend(newRow);
-        } else{
-            console.log("Point doesnt have correct properties!");
-            //console.log(point);
+                // Prepend the new data point to the container
+                tableBody.prepend(newRow);
+            } else{
+                console.log("Point doesnt have correct properties!");
+                //console.log(point);
+            }
         }
     }
-
 }
