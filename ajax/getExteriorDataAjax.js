@@ -32,7 +32,8 @@ function updatePage(data) {
         tableBody = $('<tbody>');
         table.prepend(tableBody); // Prepend the table body to maintain newest item at the top
     }
-    if(data.length > 0){
+    console.log(typeof data)
+    if(data.length > 0 && data != null){
         for (var i = data.length - 1; i >= 0; i--) {
             var point = data[i];
             //console.log(data[i]);
