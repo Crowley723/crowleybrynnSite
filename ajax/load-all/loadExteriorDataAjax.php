@@ -8,7 +8,7 @@
     <head>
         <title>Dyn. Load Exterior Data</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <?php include "../header.php" ?>
+        <?php include "../../header.php" ?>
     </head>
     <body>
         <h1 style="padding-left:16px">Exterior Data</h1>
