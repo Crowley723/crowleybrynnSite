@@ -132,12 +132,12 @@
   </div>
   <a href="/downloadCSV.php"<?php if($_SERVER['REQUEST_URI'] == "/downloadCSV.php"){echo " class=\"active\"";} ?>>Download CSV</a>
   <div class="dropdown">
-    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/loadExteriorDataAjax.php") !== false || strpos($_SERVER['REQUEST_URI'], "/ajax/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>View Table Ajax
+    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/load-all/loadExteriorDataAjax.php") !== false || strpos($_SERVER['REQUEST_URI'], "/ajax/load-all/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>View Table Ajax
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/ajax/loadExteriorDataAjax.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/loadExteriorDataAjax.php") !== false){echo " class=\"active\"";} ?>>Exterior Data</a>
-        <a href="/ajax/loadFlowerDataAjax.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>Flower Data</a>
+        <a href="/ajax/load-all/loadExteriorDataAjax.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/load-all/loadExteriorDataAjax.php") !== false){echo " class=\"active\"";} ?>>Exterior Data</a>
+        <a href="/ajax/load-all/loadFlowerDataAjax.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/load-all/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>Flower Data</a>
       </div>
   </div>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
