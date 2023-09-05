@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 
 function fetchData(){
     $.ajax({
-        url: '/ajax/getExteriorDataAjax.php',
+        url: '/ajax/load-all/getExteriorDataAjax.php',
         type: 'GET',
         headers:{
             'Last-Loaded-Row': highestId
