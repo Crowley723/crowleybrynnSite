@@ -60,7 +60,7 @@
                     'PM10' => $row_PM10,
                     'Timestamp' => $row_reading_time
                 );
-                if($looped == false){
+                if($looped === false){
                     echo "never looped";
                 }
             }
