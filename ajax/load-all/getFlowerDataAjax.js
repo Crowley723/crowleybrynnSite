@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 
 function fetchData(){
     $.ajax({
-        url: './getFlowerDataAjax.php',
+        url: '/ajax/load-all/getFlowerDataAjax.php',
         type: 'GET',
         headers:{
             
