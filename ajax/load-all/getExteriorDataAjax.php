@@ -20,8 +20,16 @@
         if(is_null($lastLoadedRow)){
             $lastLoadedRow = 0;
         }
-        //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
-        $sql = "SELECT `ID`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `PM1`, `PM2.5`, `PM10`, `Timestamp` FROM Exterior WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+            $perPage = isset($_GET['perPage']) ? $_GET['perPage'] : 10;
+            $offset = ($page - 1) * $perPage;
+            $sql = "SELECT `ID`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `PM1`, `PM2.5`, `PM10`, `Timestamp` FROM Exterior WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC LIMIT $perPage OFFSET $offset";
+        } else{
+            //$sql = "SELECT `ID`, `Temperature(C)`, `Humidity(%)`, `Timestamp` FROM Flowers WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
+            $sql = "SELECT `ID`, `Temperature(C)`, `Pressure(bar)`, `Humidity(%)`, `PM1`, `PM2.5`, `PM10`, `Timestamp` FROM Exterior WHERE ID > " . $lastLoadedRow . " ORDER BY id DESC";
+        }
+        
 
         
         if($result = $conn->query($sql)){
