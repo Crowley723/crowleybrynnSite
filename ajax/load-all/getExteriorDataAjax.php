@@ -33,9 +33,7 @@
 
         
         if($result = $conn->query($sql)){
-            $looped = false;
             while($row = $result->fetch_assoc()){
-                $looped = true;
                 echo "inside while loop"
                 $row_id = $row["ID"];
                 $row_Temperature = $row["Temperature(C)"];
@@ -60,9 +58,6 @@
                     'PM10' => $row_PM10,
                     'Timestamp' => $row_reading_time
                 );
-                if($looped === false){
-                    echo "never looped";
-                }
             }
         } else {
             echo "Internal Server Error var result: " . $result; 
