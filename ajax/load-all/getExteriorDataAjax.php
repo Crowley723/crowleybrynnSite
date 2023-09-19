@@ -58,6 +58,8 @@
                     'Timestamp' => $row_reading_time
                 );
             }
+        } else {
+            echo "Internal Server Error var result: " . $result; 
         }
         header('Content-Type: application/json');
         echo json_encode($data, JSON_THROW_ON_ERROR);
