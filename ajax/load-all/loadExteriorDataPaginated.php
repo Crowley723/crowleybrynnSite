@@ -39,6 +39,6 @@
             </select>
         </div>
 
-        <script src="./getExteriorDataAjaxPaginated.js"></script>
+        <script src="./loadExteriorDataPaginated.js"></script>
     </body>
 </html>
