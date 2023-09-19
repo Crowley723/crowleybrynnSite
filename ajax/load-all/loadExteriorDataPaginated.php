@@ -10,14 +10,12 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <style>
         #dataTable {
-            width: 100%;
-            text-align: center;
             padding-left: 7px;
         }
         #pagination {
             display: inline-block;
             margin: 0 auto;
-            padding: 3px;
+            padding: 7px;
         }
         </style>
         <?php include "../../header.php" ?>
@@ -25,7 +23,7 @@
     <body>
         <h1 style="padding-left:16px">Exterior Data</h1>
         <div>
-            <table id="dataTable" cellspacing="5" cellpadding="5" style="padding-left:7px">
+            <table id="dataTable" cellspacing="5" cellpadding="5">
             <thead>
                 <tr>
                 <th><b>ID</b></th>
