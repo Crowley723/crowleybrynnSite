@@ -4,7 +4,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    $hostname = "localhost";
+    $hostname = getenv('SQLHOSTNAME');
     $database = "sensorData";
     $username = getenv('SQLUSER');
     $password = getenv('SQLPASS');

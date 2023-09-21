@@ -20,7 +20,7 @@
   //ini_set('display_startup_errors', 1);
   //error_reporting(E_ALL);
 
-$servername = "localhost";
+$servername = getenv('SQLHOSTNAME');
 // REPLACE with your Database name
 $dbname = "sensorData";
 // REPLACE with Database user
