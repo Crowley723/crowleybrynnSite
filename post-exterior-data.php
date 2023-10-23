@@ -14,11 +14,11 @@ $dbname = "sensorData";
 $username = getenv('SQLUSER');
 // REPLACE with Database user password
 $password = getenv('SQLPASS');
+$flower_sensor_api_key = getenv('EXTERIORSENSORKEY')
 
 // Keep this API Key value to be compatible with the ESP32 code provided in the project page. 
 // If you change this value, the ESP32 sketch needs to match
-$api_key_value = "8a57fad0-48b1-4a36-912b-290b4372052e";
-//8a57fad0-48b1-4a36-912b-290b4372052e
+
 //$api_key_value = "key";
 $api_key = $Sensor = $Temperature = $Humidity = $Pressure = $PM01 = $PM25 = $PM10 = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

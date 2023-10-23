@@ -18,9 +18,10 @@ $password = getenv('SQLPASS');
 
 
 
+
 // Keep this API Key value to be compatible with the ESP32 code provided in the project page. 
 // If you change this value, the ESP32 sketch needs to match
-$api_key_value = "3f6951d3-d732-43ab-af97-edb73765071c";
+$api_key_value = getenv('FLOWERSSENSORKEY');
 $api_key = $sensor = $location = $Temperature = $Humidity = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["api_key"])){
