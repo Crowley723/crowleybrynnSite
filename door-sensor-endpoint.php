@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $databaseConnection->close();
     } else{
-        echo signatureMatchesDoorSensorApiKey($body);
         http_response_code(403);
         echo "Unauthorized";
     }
