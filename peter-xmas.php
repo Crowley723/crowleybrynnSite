@@ -119,7 +119,8 @@ body{
         <h1 id="merry-christmas">Merry Christmas</h1>
         <button onclick="revealText()" class="unhide-button" id="unhide-button">Click me!</button>
         <div class="to-do" id="to-do">
-            <p>You will be able to come back here, but keep these things in mind.
+            <p>Enable NFC on your phone, then tap the card to the back of your phone.<br>
+                You will be able to come back here, but keep these things in mind.
                 <ul>
                     <li>Add your email.</li>
                     <li>Change your password.</li>
