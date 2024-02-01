@@ -140,6 +140,16 @@
         <a href="/ajax/load-all/loadFlowerDataAjax.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/load-all/loadFlowerDataAjax.php") !== false){echo " class=\"active\"";} ?>>Flower Data</a>
       </div>
   </div>
+  <div class="dropdown">
+    <button class="dropbtn"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/paginated/loadExteriorDataPaginated.php") !== false || strpos($_SERVER['REQUEST_URI'], "/ajax/paginated/loadFlowerDataPaginated.php") !== false){echo " class=\"active\"";} ?>>View Paginated Table
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/ajax/paginated/loadExteriorDataPaginated.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/paginated/loadExteriorDataPaginated.php") !== false){echo " class=\"active\"";} ?>>Exterior Data</a>
+        <a href="/ajax/paginated/loadFlowerDataPaginated.php"<?php if(strpos($_SERVER['REQUEST_URI'], "/ajax/paginated/loadFlowerDataPaginated.php") !== false){echo " class=\"active\"";} ?>>Flower Data</a>
+      </div>
+  </div>
+  <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/signin.php"){echo " class=\"active\"";} ?>>Sign In</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
   <script>
     function showHamburgerMenu() {

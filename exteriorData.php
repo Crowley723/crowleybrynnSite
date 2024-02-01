@@ -20,15 +20,15 @@
   //ini_set('display_startup_errors', 1);
   //error_reporting(E_ALL);
 
-$servername = getenv('SQLHOSTNAME');
-// REPLACE with your Database name
-$dbname = "sensorData";
-// REPLACE with Database user
-$username = getenv('SQLUSER');
-// REPLACE with Database user password
-$password = getenv('SQLPASS');
+  $servername = getenv('SQLHOSTNAME');
+  // REPLACE with your Database name
+  $dbname = "sensorData";
+  // REPLACE with Database user
+  $username = getenv('SQLUSER');
+  // REPLACE with Database user password
+  $password = getenv('SQLPASS');
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+  $conn = new mysqli($servername, $username, $password, $dbname);
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   }
