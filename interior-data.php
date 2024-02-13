@@ -12,11 +12,10 @@
   </head>
 
 <?php
-require_once '/vars.php';
-$servername = "localhost";
-$dbname = "esp_data";
-$username = $mysql_username;
-$password = $mysql_password;
+$servername = getenv('SQLHOSTNAME');
+$dbname = "sensorData";
+$username = getenv('SQLUSER');
+$password = getenv('SQLPASS');
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

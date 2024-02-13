@@ -3,8 +3,8 @@
 <?php
 
 //require_once '';
-$servername = "localhost";
-$dbname = "esp_data";
+$servername = getenv('SQLHOSTNAME');
+$dbname = "sensorData";
 $username = $mysql_username;
 $password = $mysql_password;
 $conn = new mysqli($servername, $username, $password, $dbname);

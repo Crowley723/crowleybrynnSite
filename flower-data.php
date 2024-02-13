@@ -19,7 +19,7 @@
     //error_reporting(E_ALL);
   
     //require_once '/vars.php';
-    $servername = "localhost";
+    $servername = getenv('SQLHOSTNAME');
     $dbname = "sensorData";
     $username = getenv('SQLUSER');
 // REPLACE with Database user password

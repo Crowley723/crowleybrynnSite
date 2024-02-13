@@ -1,6 +1,6 @@
 <?php
 
-    $hostname = "localhost";
+$servername = getenv('SQLHOSTNAME');
     $database = "sensorData";
     $username = getenv('SQLUSER');
     $password = getenv('SQLPASS');

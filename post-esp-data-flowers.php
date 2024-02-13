@@ -8,7 +8,7 @@
 
 
 
-$servername = "localhost";
+$servername = getenv('SQLHOSTNAME');
 // REPLACE with your Database name
 $dbname = "sensorData";
 // REPLACE with Database user
