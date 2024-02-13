@@ -18,9 +18,7 @@
   <div style="padding-left:16px">
     <h2>Nothing Yet!</h2>
     <p></p>
-    <p>I have however, FINALLY setup an SSL certificate. Only took me 4 hours.<br><br>
-       I am in the process of adding real time AQI data to this page.
-       Eventually the goal is to have pretty looking graphics along with the ability to look at raw data vs the AQ Index. Also being able to choose between PM2.5, PM10, and Ozone.<br>
+    <p>Some things have changed since I set up my TLS certificate. I moved to cloudflare as my domain provider, I use <a href="https://doc.traefik.io/traefik/" target="_blank">traefik<a> for my reverse proxy. It lets me dynamically (havent figure that out yet) set routes to specific services, it also handles creation and renewal of TLS certificates automatically. Some more behind the scenes stuff. 2/12/24<br>
       </p>
 
   </div>
