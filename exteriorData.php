@@ -15,12 +15,12 @@
     <p>The sensor being used for PHT is the MS8607 and the sensor for the Particulate Matter Readings is the PMS5003. </p>
     <p>The PM1.0, PM2.5, and PM10 are in units of µg or micrograms per cubic meter</p>
 	</div>
-  <?php
+<?php
   //ini_set('display_errors', 1);
   //ini_set('display_startup_errors', 1);
   //error_reporting(E_ALL);
 
-$servername = "localhost";
+  $servername = getenv('SQLHOSTNAME');
 // REPLACE with your Database name
 $dbname = "sensorData";
 // REPLACE with Database user
